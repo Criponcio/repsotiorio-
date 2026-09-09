@@ -25,7 +25,7 @@ while contador > 0:
     if tentativa == numero_secreto:
         tentativa_usada = 7 - contador
         print("aaaaa malandro se é bom em")
-        print(f'acertou en {tentativa_usada}, vai tomano')
+        print(f'acertou en {tentativa_usada} tantativa vai tomano')
         acertou = True
         break
 
