@@ -4,26 +4,36 @@ numero_secreto = random.randint(1, 100)
 
 print("print")
 print("advinhe o numero de 1-100")
-print("voce tem 7 tentativas")
 
 contador = 7
 acertou = False
 
+
 while contador > 0:
+    print(f'voce ta tendo {contador} tentavias ainda')
 
-    print(f'voce tem {contador} biladas na cara')
+    entrada = input("mete o loco e chuta o numero > ").strip()
 
-    tentativa = int(input("mete o loco e chuta o numero > "))
+    if not entrada.isdigit():
+        print("o retardado é numero nao letra")
+        continue
+
+    tentativa = int(entrada)
+
     contador -= 1
 
     if tentativa == numero_secreto:
+        tentativa_usada = 7 - contador
         print("aaaaa malandro se é bom em")
+        print(f'acertou en {tentativa_usada}, vai tomano')
         acertou = True
         break
+
     elif tentativa < numero_secreto:
         print("o numero era maior doido")
+
     else:
-        print("o numero era menor doido") # Corrigido o "erro" genérico para dar dica certa
+        print("o numero era menor doido")
 
 if not acertou:
     print("o numero era", numero_secreto, "imbecil kkkkkkkk")
